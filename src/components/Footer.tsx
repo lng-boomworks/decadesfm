@@ -77,6 +77,10 @@ export function Footer() {
 
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted">&copy; {new Date().getFullYear()} Decades Worldwide Radio. All rights reserved.</p>
+          <p className="text-sm text-muted">
+            Made with ❤️ by{" "}
+            <a href="https://boomworks.es" target="_blank" rel="noopener noreferrer" className="hover:text-blue transition-colors">boomworks</a>
+          </p>
           <p className="font-display text-sm tracking-[0.3em] text-muted/70">60s · 70s · 80s · 90s · TODAY</p>
         </div>
       </div>
