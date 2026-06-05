@@ -50,17 +50,17 @@ export function ContactPage() {
 
               {/* Email + social */}
               <FadeIn delay={0.1} className="flex flex-col gap-6">
-                <a href={`mailto:${EMAIL}`} className="flex items-center gap-4 p-6 rounded-2xl bg-night-soft border border-night-line hover:border-amber/50 transition-colors group">
-                  <div className="w-12 h-12 rounded-full bg-night flex items-center justify-center shrink-0">
-                    <Mail className="w-6 h-6 text-amber" />
+                <a href={`mailto:${EMAIL}`} className="glow-card flex items-center gap-4 p-6 group" style={{ ["--accent" as string]: "var(--color-blue)" }}>
+                  <div className="w-12 h-12 rounded-xl bg-bg flex items-center justify-center shrink-0">
+                    <Mail className="w-6 h-6 text-blue" />
                   </div>
                   <div className="min-w-0">
                     <div className="text-sm text-muted mb-1">Email us</div>
-                    <div className="font-medium text-cream truncate group-hover:text-amber transition-colors">{EMAIL}</div>
+                    <div className="font-medium text-foreground truncate group-hover:text-blue transition-colors">{EMAIL}</div>
                   </div>
                 </a>
 
-                <div className="p-6 rounded-2xl bg-night-soft border border-night-line">
+                <div className="glow-card p-6" style={{ ["--accent" as string]: "var(--color-purple)" }}>
                   <div className="text-sm text-muted mb-4">Follow the station</div>
                   <div className="flex items-center gap-3">
                     <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-night border border-night-line text-cream hover:text-amber hover:border-amber transition-colors">

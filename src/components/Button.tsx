@@ -24,13 +24,13 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export function Button({ variant = "primary", href, external, className = "", children, ...props }: ButtonProps) {
-  const baseClass = "inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-[15px] font-semibold transition-all duration-200";
+  const baseClass = "inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-[15px] font-semibold transition-all duration-300 hover:-translate-y-0.5";
 
   const variants: Record<string, string> = {
-    primary: "bg-amber text-night-deep hover:bg-amber-deep hover:-translate-y-px shadow-[0_0_24px_-6px_var(--color-amber)]",
-    ghost: "border-[1.5px] border-night-line text-cream hover:border-amber hover:text-amber",
-    "outline-white": "border-[1.5px] border-cream/40 text-cream hover:bg-cream/10",
-    white: "bg-cream text-night-deep hover:bg-white hover:-translate-y-px shadow-sm",
+    primary: "bg-red text-white hover:bg-red-deep shadow-[0_0_28px_-8px_var(--color-red)] hover:shadow-[0_0_44px_-6px_var(--color-red)]",
+    ghost: "glass text-foreground hover:border-blue hover:text-blue hover:shadow-[0_0_32px_-12px_var(--color-blue)]",
+    "outline-white": "border-[1.5px] border-foreground/40 text-foreground hover:bg-foreground/10",
+    white: "bg-foreground text-bg hover:bg-white shadow-sm",
   };
 
   const classes = `${baseClass} ${variants[variant]} ${className}`;

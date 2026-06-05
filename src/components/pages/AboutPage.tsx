@@ -6,9 +6,9 @@ import { Users, Mic2, Radio } from "lucide-react";
 import { PLATFORMS } from "../../utils/site";
 
 const values = [
-  { icon: Users, title: "Every generation", desc: "From the 60s to today, there's a place on the dial for everyone. We bring the family together around the music they grew up with — and the music they're discovering now." },
-  { icon: Mic2, title: "Real presenters", desc: "Live, human-hosted radio. Our presenters choose every track with care, share the stories behind the songs, and make the station feel like a friend in the room." },
-  { icon: Radio, title: "Always on", desc: "24 hours a day, 7 days a week, in crystal-clear HD. Wherever you are and whenever you tune in, the soundtrack of your life is already playing." },
+  { icon: Users, title: "Every generation", desc: "From the 60s to today, there's a place on the dial for everyone. We bring the family together around the music they grew up with — and the music they're discovering now.", tint: "var(--color-gold)" },
+  { icon: Mic2, title: "Real presenters", desc: "Live, human-hosted radio. Our presenters choose every track with care, share the stories behind the songs, and make the station feel like a friend in the room.", tint: "var(--color-pink)" },
+  { icon: Radio, title: "Always on", desc: "24 hours a day, 7 days a week, in crystal-clear HD. Wherever you are and whenever you tune in, the soundtrack of your life is already playing.", tint: "var(--color-green)" },
 ];
 
 export function AboutPage() {
@@ -62,9 +62,9 @@ export function AboutPage() {
             <div className="grid md:grid-cols-3 gap-6">
               {values.map((v, i) => (
                 <FadeIn key={v.title} delay={i * 0.1}>
-                  <div className="h-full p-8 rounded-2xl bg-night-soft border border-night-line">
-                    <v.icon className="w-9 h-9 mb-6 text-amber" strokeWidth={1.5} />
-                    <h3 className="text-xl mb-3">{v.title}</h3>
+                  <div className="glow-card h-full p-8" style={{ ["--accent" as string]: v.tint }}>
+                    <v.icon className="w-9 h-9 mb-6" strokeWidth={1.5} style={{ color: v.tint }} />
+                    <h3 className="text-2xl tracking-wide mb-3">{v.title}</h3>
                     <p className="text-muted leading-relaxed">{v.desc}</p>
                   </div>
                 </FadeIn>

@@ -2,35 +2,20 @@ import { Navbar } from "../Navbar";
 import { Footer } from "../Footer";
 import { FadeIn } from "../FadeIn";
 import { LivePlayer } from "../LivePlayer";
-import { NowPlayingStrip } from "../NowPlayingStrip";
-import { DecadeGrid } from "../DecadeGrid";
 import { Button } from "../Button";
-import { Radio, Mic2, Globe2, ArrowRight } from "lucide-react";
+import { HeroTimeline } from "../HeroTimeline";
+import { StatusStrip } from "../StatusStrip";
+import { CategoryCard } from "../CategoryCard";
+import { FeatureCard } from "../FeatureCard";
+import { Radio, Mic2, Disc3, Globe2 } from "lucide-react";
 import { withBase } from "../../utils/url";
-import { PLATFORMS } from "../../utils/site";
+import { DECADES, STREAM_URL } from "../../utils/site";
 
-const reasons = [
-  {
-    icon: Radio,
-    title: "Five decades, one dial",
-    desc: "From the 60s to today's biggest hits — all the music you love in one place, 24/7. Tune the era to your mood with our decade browser.",
-  },
-  {
-    icon: Mic2,
-    title: "Real presenters, live",
-    desc: "Human curation, not an algorithm. Our presenters know and love this music as much as you do — and they're on air through the day.",
-  },
-  {
-    icon: Globe2,
-    title: "Listen anywhere, in HD",
-    desc: "Crystal-clear 320kbps streaming on the web, plus TuneIn, Alexa, Spotify and myTuner. Wherever you are, Decades is with you.",
-  },
-];
-
-const featuredShows = [
-  { slot: "Weekdays · Drive", show: "Drive Time Decades", line: "The big hits to soundtrack your journey home." },
-  { slot: "Weekdays · Evenings", show: "Evening Sessions", line: "Deeper cuts and timeless classics after dark." },
-  { slot: "Weekends · Mornings", show: "Weekend Throwbacks", line: "A nostalgic start to the weekend, every era welcome." },
+const features = [
+  { icon: Radio, title: "Live 24/7 in HD", desc: "Crystal-clear 320kbps streaming, around the clock. The music never stops.", ctaLabel: "Listen Live", href: STREAM_URL, tint: "var(--color-red)", external: true },
+  { icon: Mic2, title: "Real Presenters", desc: "Human-hosted shows from voices who live and breathe this music — not an algorithm.", ctaLabel: "Meet the team", href: "/shows", tint: "var(--color-pink)" },
+  { icon: Disc3, title: "Five Decades", desc: "From the 60s to today's biggest hits. Tune the era to your mood with the decade browser.", ctaLabel: "Browse decades", href: "/decades", tint: "var(--color-purple)" },
+  { icon: Globe2, title: "Listen Anywhere", desc: "On the web, plus TuneIn, Alexa, Spotify and myTuner. Wherever you are, we're with you.", ctaLabel: "How to listen", href: "/about", tint: "var(--color-green)" },
 ];
 
 export function HomePage() {
@@ -38,119 +23,83 @@ export function HomePage() {
     <>
       <Navbar />
       <main>
-        {/* Hero */}
-        <section className="relative pt-32 pb-12 md:pt-40 md:pb-16 overflow-hidden">
-          <div
-            className="absolute inset-0 -z-10"
-            style={{ background: "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(255,178,62,0.16), transparent 60%), radial-gradient(ellipse 70% 50% at 90% 20%, rgba(232,70,110,0.12), transparent 60%)" }}
-          />
+        {/* 1. Hero — split layout */}
+        <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <FadeIn>
-              <div className="max-w-3xl">
-                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-night-soft border border-night-line text-xs font-medium uppercase tracking-widest text-amber mb-6">
-                  60s · 70s · 80s · 90s · to Today
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <FadeIn>
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-lg glass text-xs font-semibold uppercase tracking-[0.18em] text-gold mb-6">
+                  Broadcasting worldwide · 24/7
                 </span>
-                <h1 className="mb-6 text-balance">
-                  The Soundtrack of Your Life — <span className="text-amber">Live, 24/7.</span>
+                <h1 className="mb-6">
+                  The Soundtrack<br />of Your Life
                 </h1>
-                <p className="text-xl text-muted mb-9 text-balance max-w-2xl">
-                  Five decades of the greatest hits — 60s, 70s, 80s, 90s to today — hosted by
-                  real presenters and streaming in crystal-clear HD.
+                <p className="text-xl text-muted mb-9 max-w-xl">
+                  Five decades of the greatest hits — 60s, 70s, 80s, 90s to today — live and
+                  hosted by real presenters, streaming in crystal-clear HD.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <LivePlayer />
                   <Button variant="ghost" href="/decades">Browse by Decade</Button>
                 </div>
-              </div>
-            </FadeIn>
+              </FadeIn>
+
+              <FadeIn delay={0.15} direction="left">
+                <HeroTimeline />
+              </FadeIn>
+            </div>
           </div>
         </section>
 
-        {/* Live-state strip */}
-        <NowPlayingStrip />
-
-        {/* Decade browser */}
-        <section className="py-20 md:py-24">
+        {/* 2. Status / featured content strip */}
+        <section className="pb-16 md:pb-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <FadeIn className="mb-10 max-w-2xl">
-              <span className="block text-[12px] font-semibold uppercase tracking-[0.2em] mb-4 text-teal">Pick your era</span>
-              <h2 className="mb-4">Browse by decade</h2>
+            <FadeIn><StatusStrip /></FadeIn>
+          </div>
+        </section>
+
+        {/* 3. Category grid — five decades */}
+        <section className="py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <FadeIn className="max-w-2xl mb-12">
+              <span className="block text-[12px] font-semibold uppercase tracking-[0.2em] mb-3 text-blue">Pick your era</span>
+              <h2 className="mb-4">Music By Decades</h2>
               <p className="text-lg text-muted">Jump straight to the sound of your generation — or wander through them all.</p>
             </FadeIn>
-            <FadeIn delay={0.1}>
-              <DecadeGrid />
-            </FadeIn>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+              {DECADES.map((d, i) => (
+                <FadeIn key={d.id} delay={(i % 5) * 0.08}>
+                  <CategoryCard label={d.label} sub={d.sub} blurb={d.blurb} tint={d.tint} image={d.image} href={withBase(`/decades#${d.id}`)} />
+                </FadeIn>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* Why Decades */}
-        <section className="py-20 md:py-24 bg-night">
+        {/* 4. Feature grid — four informational cards */}
+        <section className="py-16 md:py-24 border-t border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <FadeIn className="max-w-2xl mb-14">
-              <span className="block text-[12px] font-semibold uppercase tracking-[0.2em] mb-4 text-amber">Why Decades</span>
-              <h2 className="mb-4">Not a playlist. A radio station.</h2>
+            <FadeIn className="max-w-2xl mb-12">
+              <span className="block text-[12px] font-semibold uppercase tracking-[0.2em] mb-3 text-gold">Why Decades</span>
+              <h2 className="mb-4">Not A Playlist. A Radio Station.</h2>
               <p className="text-lg text-muted">Keeping generations connected through music — the way radio was meant to feel.</p>
             </FadeIn>
-            <div className="grid md:grid-cols-3 gap-6">
-              {reasons.map((r, i) => (
-                <FadeIn key={r.title} delay={i * 0.1}>
-                  <div className="h-full p-8 rounded-2xl bg-night-soft border border-night-line hover:border-amber/40 transition-colors">
-                    <r.icon className="w-9 h-9 mb-6 text-amber" strokeWidth={1.5} />
-                    <h3 className="text-xl mb-3">{r.title}</h3>
-                    <p className="text-muted leading-relaxed">{r.desc}</p>
-                  </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {features.map((f, i) => (
+                <FadeIn key={f.title} delay={(i % 4) * 0.08}>
+                  <FeatureCard {...f} />
                 </FadeIn>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Featured shows */}
-        <section className="py-20 md:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <FadeIn className="flex flex-wrap items-end justify-between gap-4 mb-12">
-              <div className="max-w-2xl">
-                <span className="block text-[12px] font-semibold uppercase tracking-[0.2em] mb-4 text-magenta">On the air</span>
-                <h2 className="mb-0">Shows worth tuning in for</h2>
-              </div>
-              <a href={withBase("/shows")} className="inline-flex items-center gap-1.5 text-amber font-medium hover:gap-2.5 transition-all">
-                All shows & presenters <ArrowRight className="w-4 h-4" />
-              </a>
-            </FadeIn>
-            <div className="grid md:grid-cols-3 gap-6">
-              {featuredShows.map((s, i) => (
-                <FadeIn key={s.show} delay={i * 0.1}>
-                  <a href={withBase("/shows")} className="group block h-full p-8 rounded-2xl bg-night-soft border border-night-line hover:-translate-y-1 hover:border-amber/40 transition-all duration-300">
-                    <p className="text-[11px] uppercase tracking-widest text-teal mb-3">{s.slot}</p>
-                    <h3 className="text-xl mb-3 group-hover:text-amber transition-colors">{s.show}</h3>
-                    <p className="text-muted leading-relaxed">{s.line}</p>
-                  </a>
-                </FadeIn>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Trust band */}
-        <section className="py-12 border-y border-night-line bg-night">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-center">
-            <span className="font-display font-bold text-cream">Thousands of daily listeners</span>
-            <span className="w-1 h-1 rounded-full bg-muted hidden sm:block" />
-            <span className="font-display font-bold text-cream">HD 320kbps audio</span>
-            <span className="w-1 h-1 rounded-full bg-muted hidden sm:block" />
-            <span className="text-muted">Heard on {PLATFORMS.join(" · ")}</span>
           </div>
         </section>
 
         {/* Final CTA */}
         <section className="relative py-24 overflow-hidden">
-          <div
-            className="absolute inset-0 -z-10"
-            style={{ background: "radial-gradient(ellipse 60% 80% at 50% 120%, rgba(255,178,62,0.18), transparent 60%)" }}
-          />
+          <div className="absolute inset-0 -z-10" style={{ background: "radial-gradient(ellipse 60% 80% at 50% 120%, rgba(255,43,43,0.16), transparent 60%)" }} />
           <div className="max-w-3xl mx-auto px-4 text-center">
             <FadeIn>
-              <h2 className="mb-6">Press play on five decades.</h2>
+              <h2 className="mb-6">Press Play On Five Decades.</h2>
               <p className="text-muted text-lg mb-10 max-w-xl mx-auto">
                 The music you love is already playing. Tune in now and make it the soundtrack of your day.
               </p>

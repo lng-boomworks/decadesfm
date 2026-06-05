@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import { LegalPage } from '../components/pages/LegalPage';
+
+const sections = [
+  { heading: 'Using this site', body: 'This website provides information about Decades Worldwide Radio and a link to our live stream. You are welcome to browse, listen and get in touch for personal, non-commercial use.' },
+  { heading: 'Music & copyright', body: 'All music is broadcast under the appropriate licences. Brand names, logos and content on this site remain the property of Decades Worldwide Radio and their respective owners.' },
+  { heading: 'Song requests', body: 'We love your requests, but we cannot guarantee that every request will be played. Scheduling is at the discretion of our presenters.' },
+  { heading: 'Availability', body: 'We aim to keep the stream and site available 24/7, but we cannot guarantee uninterrupted service and accept no liability for any temporary downtime.' },
+];
+---
+
+<Base title="Terms of Use — Decades Worldwide Radio" description="The terms for using the Decades Worldwide Radio website and stream." noindex={true}>
+  <LegalPage
+    client:load
+    title="Terms of Use"
+    intro="The simple terms for using the Decades Worldwide Radio website and listening to our stream."
+    sections={sections}
+  />
+</Base>

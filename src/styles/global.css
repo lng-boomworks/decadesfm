@@ -5,81 +5,131 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
-  Decades Worldwide Radio — "after-dark radio dial" theme.
-  Deep night-navy base, amber dial-glow as the Listen-Live accent,
-  retro magenta + electric teal for pop. Dark, warm, alive.
+  Decades Worldwide Radio — premium broadcast dark theme.
+  Navy-to-black base with illuminated neon accents, glassmorphism and glow.
 */
 @theme inline {
-  /* Brand palette */
-  --color-night: #1b1f3b;        /* deep night indigo (primary surfaces) */
-  --color-night-deep: #0e1020;   /* near-black navy (page background) */
-  --color-night-soft: #232850;   /* raised card surface */
-  --color-night-line: #2e3566;   /* hairline on dark */
+  /* Backgrounds */
+  --color-bg: #020816;          /* near-black navy (page base) */
+  --color-bg-2: #071628;        /* deep navy (gradient stop / sections) */
+  --color-surface: #0b2138;     /* raised card / glass base */
+  --color-surface-2: #0f2c49;   /* hover / elevated surface */
 
-  --color-amber: #ffb23e;        /* dial-glow — the Listen Live colour */
-  --color-amber-deep: #f59e1b;
-  --color-magenta: #e8466e;      /* retro pop secondary */
-  --color-teal: #34d6c8;         /* electric teal — decade accents */
+  /* Neon accent palette */
+  --color-gold: #f5c242;
+  --color-blue: #2cc4ff;
+  --color-pink: #ff5fb5;
+  --color-purple: #b55eff;
+  --color-green: #98e54d;
+  --color-red: #ff2b2b;         /* primary CTA */
+  --color-red-deep: #e01f1f;
 
-  --color-cream: #f4f2ec;        /* warm off-white text on dark */
-  --color-muted: #a8abce;        /* muted lavender-grey text */
+  /* Text */
+  --color-foreground: #f4f7ff;  /* near-white */
+  --color-muted: #93a7c4;       /* muted blue-grey */
+  --color-border: rgba(255, 255, 255, 0.09);
 
-  /* Semantic tokens */
-  --color-background: var(--color-night-deep);
-  --color-foreground: var(--color-cream);
-  --color-border: hsl(232 40% 70% / 0.16);
+  /* Semantic */
+  --color-background: var(--color-bg);
+  --color-primary: var(--color-red);
+  --color-primary-foreground: #ffffff;
+  --color-card: var(--color-surface);
 
-  --color-primary: var(--color-amber);
-  --color-primary-foreground: var(--color-night-deep);
-
-  --color-card: var(--color-night-soft);
-  --color-card-foreground: var(--color-cream);
+  /* Backward-compat aliases (older components map onto the new palette) */
+  --color-night-deep: var(--color-bg);
+  --color-night: var(--color-bg-2);
+  --color-night-soft: var(--color-surface);
+  --color-night-line: var(--color-border);
+  --color-cream: var(--color-foreground);
+  --color-amber: var(--color-gold);
+  --color-amber-deep: #e0ad33;
+  --color-magenta: var(--color-pink);
+  --color-teal: var(--color-blue);
 
   --font-sans: 'Inter', system-ui, sans-serif;
-  --font-display: 'Archivo', 'Inter', system-ui, sans-serif;
+  --font-display: 'Bebas Neue', 'Inter', system-ui, sans-serif;
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
   * {
     @apply border-border;
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased text-foreground;
+    background:
+      radial-gradient(ellipse 90% 50% at 50% -10%, rgba(44, 196, 255, 0.10), transparent 60%),
+      linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-2) 100%);
+    background-attachment: fixed;
     font-size: 17px;
     line-height: 1.7;
     font-weight: 400;
   }
 
+  /* Bebas Neue is a tall condensed display face — give headings room + tracking. */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-bold tracking-tight text-cream;
+    @apply font-display font-normal text-foreground;
+    letter-spacing: 0.02em;
+    line-height: 0.95;
   }
 
-  h1 {
-    font-size: clamp(44px, 6vw, 76px);
-    line-height: 1.02;
-    letter-spacing: -1.5px;
-  }
-
-  h2 {
-    font-size: clamp(32px, 4.5vw, 54px);
-    line-height: 1.08;
-    letter-spacing: -0.5px;
-  }
-
-  h3 {
-    font-size: clamp(20px, 3vw, 26px);
-    line-height: 1.25;
-    @apply font-semibold;
-  }
+  h1 { font-size: clamp(52px, 8vw, 104px); }
+  h2 { font-size: clamp(38px, 5.5vw, 68px); }
+  h3 { font-size: clamp(24px, 3vw, 34px); letter-spacing: 0.03em; }
 
   *:focus-visible {
-    outline: 2px solid var(--color-amber);
+    outline: 2px solid var(--color-blue);
     outline-offset: 2px;
   }
 
   ::selection {
-    background: var(--color-amber);
-    color: var(--color-night-deep);
+    background: var(--color-gold);
+    color: var(--color-bg);
+  }
+}
+
+@layer components {
+  /* Glassmorphism surface */
+  .glass {
+    background: color-mix(in srgb, var(--color-surface) 65%, transparent);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--color-border);
+  }
+
+  /*
+    Neon-glow card. Set --accent on the element (defaults to neon blue).
+    Glow intensifies and the card lifts/scales on hover.
+  */
+  .glow-card {
+    --accent: var(--color-blue);
+    background: color-mix(in srgb, var(--color-surface) 70%, transparent);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--color-border));
+    border-radius: 12px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02),
+                0 18px 40px -24px rgba(0, 0, 0, 0.9),
+                0 0 28px -16px var(--accent);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .glow-card:hover {
+    transform: scale(1.03);
+    border-color: color-mix(in srgb, var(--accent) 60%, transparent);
+    box-shadow: 0 24px 50px -24px rgba(0, 0, 0, 0.9),
+                0 0 48px -10px var(--accent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .glow-card:hover { transform: none; }
   }
 }

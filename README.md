@@ -21,6 +21,8 @@ Built with [Astro](https://astro.build) + React + Tailwind CSS, deployed to GitH
 
 ## Develop
 
+**Requires Node.js ≥ 22.12** (Astro 6 — Node 20 will fail the build). The GitHub Pages CI uses Node 22.
+
 ```bash
 npm install
 npm run dev      # local dev server

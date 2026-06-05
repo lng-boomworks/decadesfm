@@ -13,14 +13,14 @@ interface LivePlayerProps {
  */
 export function LivePlayer({ variant = "solid", label = "Listen Live", className = "" }: LivePlayerProps) {
   const base =
-    "inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-[15px] font-semibold transition-all duration-200";
+    "inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-[15px] font-semibold transition-all duration-300 hover:-translate-y-0.5";
 
   const variants: Record<string, string> = {
     solid:
-      "bg-amber text-night-deep hover:bg-amber-deep hover:-translate-y-px shadow-[0_0_24px_-6px_var(--color-amber)]",
-    outline: "border-[1.5px] border-amber text-amber hover:bg-amber/10",
+      "bg-red text-white hover:bg-red-deep shadow-[0_0_28px_-8px_var(--color-red)] hover:shadow-[0_0_46px_-6px_var(--color-red)]",
+    outline: "border-[1.5px] border-red text-red hover:bg-red/10 hover:shadow-[0_0_32px_-12px_var(--color-red)]",
     block:
-      "w-full bg-amber text-night-deep hover:bg-amber-deep shadow-[0_0_24px_-6px_var(--color-amber)]",
+      "w-full bg-red text-white hover:bg-red-deep shadow-[0_0_28px_-8px_var(--color-red)]",
   };
 
   return (
