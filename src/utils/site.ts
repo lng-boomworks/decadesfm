@@ -26,9 +26,9 @@ export const NAV_LINKS = [
 // neon accent from the palette. `image` is optional — cards fall back to a
 // tinted gradient until a real photo is dropped into public/images/decades/.
 export const DECADES = [
-  { id: "60s", label: "60s", sub: "The Swinging Sixties", blurb: "Where it all began — Motown soul and the British Invasion.", tint: "var(--color-gold)", image: "/images/decades/60s.jpg" },
-  { id: "70s", label: "70s", sub: "Disco Fever", blurb: "Stadium anthems and the glitterball in full swing.", tint: "var(--color-pink)", image: "/images/decades/70s.jpg" },
-  { id: "80s", label: "80s", sub: "Neon Nights", blurb: "Big hair, bigger choruses and synth-pop at full volume.", tint: "var(--color-blue)", image: "/images/decades/80s.jpg" },
-  { id: "90s", label: "90s", sub: "The Anthems", blurb: "Britpop, R&B and the last great singalong decade.", tint: "var(--color-purple)", image: "/images/decades/90s.jpg" },
-  { id: "today", label: "Today", sub: "Right Now", blurb: "The hits still landing, beside the classics that made them.", tint: "var(--color-green)", image: "/images/decades/today.jpg" },
+  { id: "60s", label: "60s", sub: "The Swinging Sixties", blurb: "Where it all began — Motown soul and the British Invasion.", tint: "var(--color-gold)", image: "/images/decades/60s.webp" },
+  { id: "70s", label: "70s", sub: "Disco Fever", blurb: "Stadium anthems and the glitterball in full swing.", tint: "var(--color-pink)", image: "/images/decades/70s.webp" },
+  { id: "80s", label: "80s", sub: "Neon Nights", blurb: "Big hair, bigger choruses and synth-pop at full volume.", tint: "var(--color-blue)", image: "/images/decades/80s.webp" },
+  { id: "90s", label: "90s", sub: "The Anthems", blurb: "Britpop, R&B and the last great singalong decade.", tint: "var(--color-purple)", image: "/images/decades/90s.webp" },
+  { id: "today", label: "Today", sub: "Right Now", blurb: "The hits still landing, beside the classics that made them.", tint: "var(--color-green)", image: "/images/decades/today.webp" },
 ];
