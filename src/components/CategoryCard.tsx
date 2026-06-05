@@ -18,7 +18,7 @@ interface CategoryCardProps {
  */
 export function CategoryCard({ label, sub, blurb, tint, image, href }: CategoryCardProps) {
   return (
-    <a href={href} className="glow-card group relative block overflow-hidden aspect-[3/4]" style={{ ["--accent" as string]: tint }}>
+    <a href={href} className="glow-card group relative block overflow-hidden aspect-[4/7]" style={{ ["--accent" as string]: tint }}>
       {/* Tinted gradient fallback (always present, behind the photo) */}
       <div
         className="absolute inset-0"
