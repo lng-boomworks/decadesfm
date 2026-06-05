@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.astro/
+.env
+.DS_Store
+.superpowers/
+
+# Internal planning artifacts — keep local, don't publish to the client repo
+research/

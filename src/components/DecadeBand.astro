@@ -1,0 +1,32 @@
+---
+// One full-width era band on the /decades page. Reused per decade.
+interface Props {
+  id: string;        // anchor target, e.g. "80s" → /decades#80s
+  era: string;       // "80s"
+  title: string;     // "The Eighties"
+  blurb: string;     // one evocative sentence about the sound
+  artists: string;   // representative artists / flavour
+  tint: string;      // CSS color for the giant numeral
+  flip?: boolean;    // alternate layout side
+}
+const { id, era, title, blurb, artists, tint, flip = false } = Astro.props;
+---
+<section id={id} class="scroll-mt-24 py-14 md:py-20 border-b border-night-line">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class={`flex flex-col md:flex-row items-center gap-8 md:gap-14 ${flip ? "md:flex-row-reverse" : ""}`}>
+      <div class="shrink-0 text-center">
+        <span
+          class="font-display font-black leading-none tracking-tighter text-[clamp(90px,16vw,200px)]"
+          style={`color: ${tint};`}
+        >
+          {era}
+        </span>
+      </div>
+      <div class="flex-1">
+        <h2 class="mb-4">{title}</h2>
+        <p class="text-xl text-cream/90 mb-4 max-w-2xl">{blurb}</p>
+        <p class="text-muted text-[15px] uppercase tracking-wider">{artists}</p>
+      </div>
+    </div>
+  </div>
+</section>

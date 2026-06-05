@@ -1,0 +1,86 @@
+---
+import '../styles/global.css';
+import { withBase } from '../utils/url';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = 'Decades Worldwide Radio — five decades of the greatest hits, live 24/7. The soundtrack of your life, hosted by real presenters.',
+  ogImage = '/images/og-default.jpg',
+  type = 'website',
+  noindex = false,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0e1020" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:site_name" content="Decades Worldwide Radio" />
+    <meta property="og:locale" content="en_GB" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- Favicon -->
+    <link rel="icon" href={withBase("/favicon.ico")} sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="32x32" href={withBase("/favicon-32.png")} />
+    <link rel="apple-touch-icon" href={withBase("/apple-touch-icon.png")} />
+
+    <!-- Fonts: Archivo (display) + Inter (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- JSON-LD: RadioStation (every page) -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "RadioStation",
+      "@id": "https://lng-boomworks.github.io/decadesfm/#station",
+      "name": "Decades Worldwide Radio",
+      "alternateName": "Decades FM",
+      "description": "Five decades of the greatest hits — 60s, 70s, 80s, 90s to today — live 24/7 with real presenters.",
+      "slogan": "The Soundtrack of Your Life",
+      "url": "https://lng-boomworks.github.io/decadesfm/",
+      "email": "info@decadesworldwideradio.com",
+      "broadcastDisplayName": "Decades Worldwide Radio",
+      "sameAs": [
+        "https://www.instagram.com/decadesworldwideradio",
+        "https://www.youtube.com/@decadesworldwideradio",
+        "https://x.com/decadesww"
+      ]
+    })} />
+
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen flex flex-col bg-background text-foreground">
+    <slot />
+  </body>
+</html>

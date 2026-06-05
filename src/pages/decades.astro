@@ -1,0 +1,63 @@
+---
+import Base from '../layouts/Base.astro';
+import { Navbar } from '../components/Navbar';
+import { Footer } from '../components/Footer';
+import { LivePlayer } from '../components/LivePlayer';
+import SectionLabel from '../components/SectionLabel.astro';
+import DecadeBand from '../components/DecadeBand.astro';
+
+const bands = [
+  { id: '60s', era: '60s', title: 'The Sixties', tint: 'var(--color-amber)', blurb: 'Where it all began — the British Invasion, Motown soul and the songs that rewrote pop forever.', artists: 'The Beatles · The Supremes · The Rolling Stones · Aretha Franklin' },
+  { id: '70s', era: '70s', title: 'The Seventies', tint: 'var(--color-magenta)', blurb: 'Disco balls and stadium anthems — the decade that knew how to throw a party from dusk till dawn.', artists: 'ABBA · Fleetwood Mac · Stevie Wonder · Bee Gees' },
+  { id: '80s', era: '80s', title: 'The Eighties', tint: 'var(--color-teal)', blurb: 'Big hair, bigger choruses and the neon glow of synth-pop at full volume.', artists: 'Madonna · Michael Jackson · Queen · Whitney Houston' },
+  { id: '90s', era: '90s', title: 'The Nineties', tint: 'var(--color-amber)', blurb: 'From Britpop to R&B to the dancefloor — the last great decade of the radio singalong.', artists: 'Oasis · Spice Girls · Mariah Carey · Nirvana' },
+  { id: '00s', era: '00s', title: 'The Noughties', tint: 'var(--color-magenta)', blurb: 'Pop got polished and the throwbacks began — the soundtrack to a brand-new millennium.', artists: 'Beyoncé · Coldplay · Rihanna · Eminem' },
+  { id: 'today', era: 'Now', title: 'Right Now', tint: 'var(--color-teal)', blurb: 'The hits still landing today, sitting shoulder to shoulder with the classics that made them possible.', artists: "Today's biggest names · fresh releases · modern classics" },
+];
+---
+
+<Base
+  title="Music by Decades — Decades Worldwide Radio"
+  description="Five decades of the greatest music in one place. Browse the 60s, 70s, 80s, 90s, 00s and today — and tune the era to your mood."
+>
+  <Navbar client:load />
+  <main>
+    <section class="relative pt-32 pb-12 md:pt-40 md:pb-16 overflow-hidden">
+      <div
+        class="absolute inset-0 -z-10"
+        style="background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(52,214,200,0.14), transparent 60%);"
+      >
+      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl">
+          <SectionLabel text="Music by Decades" color="text-teal" />
+          <h1 class="mb-6">Five decades. One station.</h1>
+          <p class="text-xl text-muted">
+            Every era has a sound. Scroll through the years — or jump straight to the decade that feels
+            like home — and hear them all, live, on Decades Worldwide Radio.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {bands.map((b, i) => <DecadeBand {...b} flip={i % 2 === 1} />)}
+
+    <section class="relative py-24 overflow-hidden">
+      <div
+        class="absolute inset-0 -z-10"
+        style="background: radial-gradient(ellipse 60% 80% at 50% 120%, rgba(255,178,62,0.16), transparent 60%);"
+      >
+      </div>
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="mb-6">Whatever your era — it's playing now.</h2>
+        <p class="text-muted text-lg mb-10 max-w-xl mx-auto">
+          One dial, five decades, zero ads in your way. Press play and let the memories roll.
+        </p>
+        <div class="flex justify-center">
+          <LivePlayer client:load label="Listen Live" />
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer client:load />
+</Base>

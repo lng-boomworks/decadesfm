@@ -1,0 +1,85 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  Decades Worldwide Radio — "after-dark radio dial" theme.
+  Deep night-navy base, amber dial-glow as the Listen-Live accent,
+  retro magenta + electric teal for pop. Dark, warm, alive.
+*/
+@theme inline {
+  /* Brand palette */
+  --color-night: #1b1f3b;        /* deep night indigo (primary surfaces) */
+  --color-night-deep: #0e1020;   /* near-black navy (page background) */
+  --color-night-soft: #232850;   /* raised card surface */
+  --color-night-line: #2e3566;   /* hairline on dark */
+
+  --color-amber: #ffb23e;        /* dial-glow — the Listen Live colour */
+  --color-amber-deep: #f59e1b;
+  --color-magenta: #e8466e;      /* retro pop secondary */
+  --color-teal: #34d6c8;         /* electric teal — decade accents */
+
+  --color-cream: #f4f2ec;        /* warm off-white text on dark */
+  --color-muted: #a8abce;        /* muted lavender-grey text */
+
+  /* Semantic tokens */
+  --color-background: var(--color-night-deep);
+  --color-foreground: var(--color-cream);
+  --color-border: hsl(232 40% 70% / 0.16);
+
+  --color-primary: var(--color-amber);
+  --color-primary-foreground: var(--color-night-deep);
+
+  --color-card: var(--color-night-soft);
+  --color-card-foreground: var(--color-cream);
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Archivo', 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-size: 17px;
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight text-cream;
+  }
+
+  h1 {
+    font-size: clamp(44px, 6vw, 76px);
+    line-height: 1.02;
+    letter-spacing: -1.5px;
+  }
+
+  h2 {
+    font-size: clamp(32px, 4.5vw, 54px);
+    line-height: 1.08;
+    letter-spacing: -0.5px;
+  }
+
+  h3 {
+    font-size: clamp(20px, 3vw, 26px);
+    line-height: 1.25;
+    @apply font-semibold;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--color-amber);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-amber);
+    color: var(--color-night-deep);
+  }
+}

@@ -1,0 +1,12 @@
+---
+// Editorial eyebrow heading above a major section. Reused from the house
+// `SectionLabel` convention.
+interface Props {
+  text: string;
+  color?: string; // tailwind text color class, e.g. "text-amber"
+}
+const { text, color = "text-amber" } = Astro.props;
+---
+<span class={`block text-[12px] font-semibold uppercase tracking-[0.2em] mb-4 ${color}`}>
+  {text}
+</span>
