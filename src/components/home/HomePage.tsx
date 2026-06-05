@@ -9,10 +9,11 @@ import { CategoryCard } from "../CategoryCard";
 import { FeatureCard } from "../FeatureCard";
 import { Radio, Mic2, Disc3, Globe2 } from "lucide-react";
 import { withBase } from "../../utils/url";
-import { DECADES, STREAM_URL } from "../../utils/site";
+import { DECADES } from "../../utils/site";
+import { radio } from "../../utils/radio";
 
 const features = [
-  { icon: Radio, title: "Live 24/7 in HD", desc: "Crystal-clear 320kbps streaming, around the clock. The music never stops.", ctaLabel: "Listen Live", href: STREAM_URL, tint: "var(--color-red)", external: true },
+  { icon: Radio, title: "Live 24/7 in HD", desc: "Crystal-clear 320kbps streaming, around the clock. The music never stops.", ctaLabel: "Listen Live", onClick: () => radio.toggle(), tint: "var(--color-red)" },
   { icon: Mic2, title: "Real Presenters", desc: "Human-hosted shows from voices who live and breathe this music - not an algorithm.", ctaLabel: "Meet the team", href: "/shows", tint: "var(--color-pink)" },
   { icon: Disc3, title: "Five Decades", desc: "From the 60s to today's biggest hits. Tune the era to your mood with the decade browser.", ctaLabel: "Browse decades", href: "/decades", tint: "var(--color-purple)" },
   { icon: Globe2, title: "Listen Anywhere", desc: "On the web, plus TuneIn, Alexa, Spotify and myTuner. Wherever you are, we're with you.", ctaLabel: "How to listen", href: "/about", tint: "var(--color-green)" },

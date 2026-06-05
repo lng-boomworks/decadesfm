@@ -1,6 +1,9 @@
 // Shared site data for Decades Worldwide Radio.
 // Edit these in one place - components read from here.
 
+// Direct Citrus3 audio stream (HTTPS, AAC) - played inline via HTML5 <audio>.
+export const STREAM_DIRECT_URL = "https://s6.citrus3.com:2020/11066/stream";
+// Public Citrus3 player page - fallback "open in new tab" if inline playback fails.
 export const STREAM_URL = "https://s6.citrus3.com/public/decadesfmworldwideradio";
 export const EMAIL = "info@decadesworldwideradio.com";
 
