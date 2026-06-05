@@ -14,6 +14,7 @@ export type RadioState = "idle" | "loading" | "playing" | "error";
 let audio: HTMLAudioElement | null = null;
 let state: RadioState = "idle";
 let stopping = false;
+let volume = 0.85;
 const listeners = new Set<(s: RadioState) => void>();
 
 function emit() {
@@ -29,6 +30,7 @@ function setState(next: RadioState) {
 function build(): HTMLAudioElement {
   const a = new Audio();
   a.preload = "none";
+  a.volume = volume;
   a.addEventListener("playing", () => setState("playing"));
   a.addEventListener("waiting", () => setState("loading"));
   a.addEventListener("pause", () => { if (!stopping) setState("idle"); });
@@ -43,6 +45,23 @@ export const radio = {
     listeners.add(fn);
     fn(state); // sync the new subscriber immediately
     return () => listeners.delete(fn);
+  },
+
+  getVolume: () => volume,
+
+  setVolume(v: number) {
+    volume = Math.min(1, Math.max(0, v));
+    if (audio) audio.volume = volume;
+  },
+
+  stop() {
+    if (!audio) return;
+    stopping = true;
+    audio.pause();
+    audio.removeAttribute("src");
+    audio.load();
+    stopping = false;
+    setState("idle");
   },
 
   async toggle() {

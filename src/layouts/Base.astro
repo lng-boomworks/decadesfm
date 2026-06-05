@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import { withBase } from '../utils/url';
+import { ClientRouter } from 'astro:transitions';
+import { MiniPlayer } from '../components/MiniPlayer';
 
 interface Props {
   title: string;
@@ -78,9 +80,12 @@ const ogImageURL = new URL(ogImage, Astro.site);
       ]
     })} />
 
+    <ClientRouter />
+
     <slot name="head" />
   </head>
   <body class="min-h-screen flex flex-col bg-background text-foreground">
     <slot />
+    <MiniPlayer client:load transition:persist="mini-player" />
   </body>
 </html>
