@@ -5,7 +5,7 @@
 export const STREAM_DIRECT_URL = "https://s6.citrus3.com:2020/11066/stream";
 // Public Citrus3 player page - fallback "open in new tab" if inline playback fails.
 export const STREAM_URL = "https://s6.citrus3.com/public/decadesfmworldwideradio";
-export const EMAIL = "info@decadesworldwideradio.com";
+export const EMAIL = "info@decadesfm.com";
 
 export const SOCIALS = {
   instagram: "https://www.instagram.com/decadesworldwideradio",
