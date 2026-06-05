@@ -25,14 +25,13 @@ export function CategoryCard({ label, sub, blurb, tint, image, href }: CategoryC
         style={{ background: `linear-gradient(155deg, color-mix(in srgb, ${tint} 40%, transparent), transparent 60%), var(--color-surface)` }}
       />
 
-      {/* Full-bleed background image */}
+      {/* Full-bleed background image (visible by default; hidden only if it fails to load) */}
       {image && (
         <img
           src={withBase(image)}
           alt={`${label} — ${sub}`}
           loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-500 group-hover:scale-105"
-          onLoad={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = "1"; }}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
         />
       )}
