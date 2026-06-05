@@ -46,9 +46,9 @@ export function Navbar() {
         {/* Logo (left) */}
         <a href={withBase("/")} className="flex items-center gap-3 shrink-0">
           <img
-            src={withBase("/images/logo.png")}
+            src={withBase("/images/logo.webp")}
             alt="Decades Worldwide Radio"
-            className={logoOk ? "h-10 w-auto" : "hidden"}
+            className={logoOk ? "h-12 w-auto" : "hidden"}
             onLoad={() => setLogoOk(true)}
             onError={() => setLogoOk(false)}
           />
