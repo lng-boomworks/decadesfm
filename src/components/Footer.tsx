@@ -1,12 +1,9 @@
-import { useState } from "react";
 import { Mail } from "lucide-react";
 import { InstagramIcon, YoutubeIcon } from "./BrandIcons";
 import { withBase } from "../utils/url";
 import { NAV_LINKS, SOCIALS, EMAIL, PLATFORMS } from "../utils/site";
 
 export function Footer() {
-  // Show the real logo if /images/logo.png loads; otherwise keep the wordmark.
-  const [logoOk, setLogoOk] = useState(false);
   const socialCls =
     "p-2.5 rounded-lg glass text-muted hover:text-blue hover:shadow-[0_0_24px_-10px_var(--color-blue)] transition-all";
 
@@ -16,19 +13,12 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand + socials + contact */}
           <div className="col-span-2 md:col-span-1">
-            <a href={withBase("/")} className="inline-flex items-center mb-5">
+            <a href={withBase("/")} className="inline-flex items-center mb-5" aria-label="Decades Worldwide Radio — home">
               <img
                 src={withBase("/images/logo.webp")}
                 alt="Decades Worldwide Radio"
-                className={logoOk ? "h-14 w-auto" : "hidden"}
-                onLoad={() => setLogoOk(true)}
-                onError={() => setLogoOk(false)}
+                className="h-16 w-auto"
               />
-              {!logoOk && (
-                <span className="font-display text-[28px] leading-none tracking-wide text-foreground">
-                  DECADES<span className="text-gold"> WORLDWIDE</span>
-                </span>
-              )}
             </a>
             <p className="text-[15px] leading-relaxed mb-6 max-w-sm text-muted">
               The Soundtrack of Your Life. Five decades of the greatest hits, live 24/7 —

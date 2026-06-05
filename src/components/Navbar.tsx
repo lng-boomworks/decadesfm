@@ -25,7 +25,6 @@ export function Navbar() {
   const [location, setLocation] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [logoOk, setLogoOk] = useState(false);
 
   useEffect(() => {
     const path = window.location.pathname;
@@ -44,19 +43,12 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[76px] flex items-center justify-between gap-4">
         {/* Logo (left) */}
-        <a href={withBase("/")} className="flex items-center gap-3 shrink-0">
+        <a href={withBase("/")} className="flex items-center shrink-0" aria-label="Decades Worldwide Radio — home">
           <img
             src={withBase("/images/logo.webp")}
             alt="Decades Worldwide Radio"
-            className={logoOk ? "h-12 w-auto" : "hidden"}
-            onLoad={() => setLogoOk(true)}
-            onError={() => setLogoOk(false)}
+            className="h-12 w-auto"
           />
-          {!logoOk && (
-            <span className="font-display text-[26px] leading-none tracking-wide text-foreground">
-              DECADES<span className="text-gold"> WORLDWIDE</span>
-            </span>
-          )}
         </a>
 
         {/* Nav (centre) */}
