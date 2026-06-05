@@ -16,7 +16,7 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand + socials + contact */}
           <div className="col-span-2 md:col-span-1">
-            <a href={withBase("/")} className="inline-flex items-center mb-5" aria-label="Decades Worldwide Radio — home">
+            <a href={withBase("/")} className="inline-flex items-center mb-5" aria-label="Decades Worldwide Radio - home">
               <img
                 src={withBase("/images/logo.webp")}
                 alt="Decades Worldwide Radio"
@@ -24,7 +24,7 @@ export function Footer() {
               />
             </a>
             <p className="text-[15px] leading-relaxed mb-6 max-w-sm text-muted">
-              The Soundtrack of Your Life. Five decades of the greatest hits, live 24/7 —
+              The Soundtrack of Your Life. Five decades of the greatest hits, live 24/7 -
               keeping generations connected through music.
             </p>
             <div className="flex items-center gap-2">

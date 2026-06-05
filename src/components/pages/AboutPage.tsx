@@ -6,7 +6,7 @@ import { Users, Mic2, Radio } from "lucide-react";
 import { PLATFORMS } from "../../utils/site";
 
 const values = [
-  { icon: Users, title: "Every generation", desc: "From the 60s to today, there's a place on the dial for everyone. We bring the family together around the music they grew up with — and the music they're discovering now.", tint: "var(--color-gold)" },
+  { icon: Users, title: "Every generation", desc: "From the 60s to today, there's a place on the dial for everyone. We bring the family together around the music they grew up with - and the music they're discovering now.", tint: "var(--color-gold)" },
   { icon: Mic2, title: "Real presenters", desc: "Live, human-hosted radio. Our presenters choose every track with care, share the stories behind the songs, and make the station feel like a friend in the room.", tint: "var(--color-pink)" },
   { icon: Radio, title: "Always on", desc: "24 hours a day, 7 days a week, in crystal-clear HD. Wherever you are and whenever you tune in, the soundtrack of your life is already playing.", tint: "var(--color-green)" },
 ];
@@ -23,7 +23,7 @@ export function AboutPage() {
               <span className="block text-[12px] font-semibold uppercase tracking-[0.2em] mb-4 text-amber">About</span>
               <h1 className="mb-6">Keeping generations connected through music.</h1>
               <p className="text-xl text-muted">
-                Decades Worldwide Radio brings the greatest music from every era into one place —
+                Decades Worldwide Radio brings the greatest music from every era into one place -
                 the timeless classics of the 60s, 70s, 80s and 90s, right through to today's biggest hits.
               </p>
             </FadeIn>
@@ -37,16 +37,16 @@ export function AboutPage() {
               <div className="space-y-5 text-lg text-cream/90 leading-relaxed">
                 <p>
                   Some songs are time machines. The first dance, the long drive, the summer that never
-                  seemed to end — the right track can take you straight back. That's the feeling
+                  seemed to end - the right track can take you straight back. That's the feeling
                   Decades Worldwide Radio was built to give you, around the clock.
                 </p>
                 <p>
                   We're a live radio station, not a playlist. Five decades of the greatest hits, hand-picked
                   and hosted by real presenters who love this music as much as you do. It's the soundtrack
-                  of your life — and it's playing right now.
+                  of your life - and it's playing right now.
                 </p>
                 <p className="text-muted">
-                  {/* {{ABOUT_STORY_EXTRA — optional: founding story, where the station broadcasts from, the team's history.}} */}
+                  {/* {{ABOUT_STORY_EXTRA - optional: founding story, where the station broadcasts from, the team's history.}} */}
                 </p>
               </div>
             </FadeIn>
@@ -79,7 +79,7 @@ export function AboutPage() {
             <FadeIn>
               <h2 className="mb-4">Listen anywhere</h2>
               <p className="text-lg text-muted mb-8 max-w-xl mx-auto">
-                Tune in on the web player, or find us on your favourite platform — at home, in the car, or on the move.
+                Tune in on the web player, or find us on your favourite platform - at home, in the car, or on the move.
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 {PLATFORMS.map((p) => (

@@ -36,7 +36,7 @@ export function SchedulePage() {
           <div className="max-w-3xl mx-auto px-4 text-center">
             <FadeIn>
               <h2 className="mb-6">On air right now.</h2>
-              <p className="text-muted text-lg mb-10 max-w-xl mx-auto">Don't wait for your slot — there's great music playing this second.</p>
+              <p className="text-muted text-lg mb-10 max-w-xl mx-auto">Don't wait for your slot - there's great music playing this second.</p>
               <div className="flex flex-wrap justify-center gap-4">
                 <LivePlayer label="Listen Live" />
                 <Button variant="ghost" href="/shows">Meet the presenters</Button>

@@ -2,7 +2,7 @@ import { Disc3, Mic, Clock } from "lucide-react";
 import { withBase } from "../utils/url";
 
 /**
- * Status / featured-content strip — three horizontal glass cards:
+ * Status / featured-content strip - three horizontal glass cards:
  * current content (Now Playing), featured profile (On Air presenter), upcoming.
  *
  * v1: STATIC PLACEHOLDER content. Live track/show data needs a Citrus3 metadata

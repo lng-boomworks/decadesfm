@@ -1,6 +1,6 @@
 /**
  * Weekly schedule grid. Built to scan: each row is a time band, each cell a show
- * + presenter. v1 uses placeholder programming — swap in the real weekly schedule
+ * + presenter. v1 uses placeholder programming - swap in the real weekly schedule
  * (see {{SCHEDULE_*}} tokens) when available.
  */
 const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -19,7 +19,7 @@ const schedule: Slot[] = [
 export function ScheduleGrid() {
   return (
     <div>
-      {/* Day selector — visual scan aid. Highlights the broadcast week at a glance. */}
+      {/* Day selector - visual scan aid. Highlights the broadcast week at a glance. */}
       <div className="flex flex-wrap gap-2 mb-8">
         {days.map((d, i) => (
           <span
@@ -33,7 +33,7 @@ export function ScheduleGrid() {
             {d}
           </span>
         ))}
-        <span className="px-4 py-2 text-sm text-muted self-center">— same schedule daily (v1 placeholder)</span>
+        <span className="px-4 py-2 text-sm text-muted self-center">- same schedule daily (v1 placeholder)</span>
       </div>
 
       <div className="rounded-2xl border border-night-line overflow-hidden divide-y divide-night-line">

@@ -42,11 +42,11 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full relative">
-        {/* Logo (left) — oversized, top-aligned so it overflows the bar */}
+        {/* Logo (left) - oversized, top-aligned so it overflows the bar */}
         <a
           href={withBase("/")}
           className="absolute left-4 sm:left-6 lg:left-8 top-2 z-10"
-          aria-label="Decades Worldwide Radio — home"
+          aria-label="Decades Worldwide Radio - home"
         >
           <img
             src={withBase("/images/logo.webp")}
@@ -70,7 +70,7 @@ export function Navbar() {
           ))}
         </nav>
 
-        {/* Right cluster — socials bottom-aligned, Listen Live vertically centred */}
+        {/* Right cluster - socials bottom-aligned, Listen Live vertically centred */}
         <div className="hidden lg:flex absolute right-4 sm:right-6 lg:right-8 inset-y-0 items-stretch gap-5">
           <Socials className="self-end pb-5" />
           <div className="self-center">

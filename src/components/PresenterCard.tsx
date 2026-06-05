@@ -10,7 +10,7 @@ interface PresenterCardProps {
 }
 
 /**
- * Presenter profile card for the /shows team grid. `image` is optional — until
+ * Presenter profile card for the /shows team grid. `image` is optional - until
  * real presenter photos exist, the card shows a branded monogram placeholder.
  */
 export function PresenterCard({ name, show, slot, bio, image }: PresenterCardProps) {

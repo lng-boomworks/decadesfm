@@ -13,7 +13,7 @@ interface FeatureCardProps {
 }
 
 /**
- * Informational feature card — icon, heading, description and a CTA. Neon hover
+ * Informational feature card - icon, heading, description and a CTA. Neon hover
  * glow tinted per-card via --accent.
  */
 export function FeatureCard({ icon: Icon, title, desc, ctaLabel, href, tint, external }: FeatureCardProps) {

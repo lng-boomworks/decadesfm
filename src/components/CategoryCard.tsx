@@ -29,14 +29,14 @@ export function CategoryCard({ label, sub, blurb, tint, image, href }: CategoryC
       {image && (
         <img
           src={withBase(image)}
-          alt={`${label} — ${sub}`}
+          alt={`${label} - ${sub}`}
           loading="lazy"
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
         />
       )}
 
-      {/* Legibility scrim — dark at the foot, lighter up top */}
+      {/* Legibility scrim - dark at the foot, lighter up top */}
       <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/55 to-bg/10" />
 
       {/* Content overlay */}

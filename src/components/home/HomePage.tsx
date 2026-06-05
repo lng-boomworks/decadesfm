@@ -13,7 +13,7 @@ import { DECADES, STREAM_URL } from "../../utils/site";
 
 const features = [
   { icon: Radio, title: "Live 24/7 in HD", desc: "Crystal-clear 320kbps streaming, around the clock. The music never stops.", ctaLabel: "Listen Live", href: STREAM_URL, tint: "var(--color-red)", external: true },
-  { icon: Mic2, title: "Real Presenters", desc: "Human-hosted shows from voices who live and breathe this music — not an algorithm.", ctaLabel: "Meet the team", href: "/shows", tint: "var(--color-pink)" },
+  { icon: Mic2, title: "Real Presenters", desc: "Human-hosted shows from voices who live and breathe this music - not an algorithm.", ctaLabel: "Meet the team", href: "/shows", tint: "var(--color-pink)" },
   { icon: Disc3, title: "Five Decades", desc: "From the 60s to today's biggest hits. Tune the era to your mood with the decade browser.", ctaLabel: "Browse decades", href: "/decades", tint: "var(--color-purple)" },
   { icon: Globe2, title: "Listen Anywhere", desc: "On the web, plus TuneIn, Alexa, Spotify and myTuner. Wherever you are, we're with you.", ctaLabel: "How to listen", href: "/about", tint: "var(--color-green)" },
 ];
@@ -23,7 +23,7 @@ export function HomePage() {
     <>
       <Navbar />
       <main>
-        {/* 1. Hero — split layout */}
+        {/* 1. Hero - split layout */}
         <section className="relative pt-36 pb-16 md:pt-44 md:pb-20 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -35,7 +35,7 @@ export function HomePage() {
                   The Soundtrack<br />of Your Life
                 </h1>
                 <p className="text-xl text-muted mb-9 max-w-xl">
-                  Five decades of the greatest hits — 60s, 70s, 80s, 90s to today — live and
+                  Five decades of the greatest hits - 60s, 70s, 80s, 90s to today - live and
                   hosted by real presenters, streaming in crystal-clear HD.
                 </p>
                 <div className="flex flex-wrap gap-4">
@@ -58,13 +58,13 @@ export function HomePage() {
           </div>
         </section>
 
-        {/* 3. Category grid — five decades */}
+        {/* 3. Category grid - five decades */}
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn className="max-w-2xl mb-12">
               <span className="block text-[12px] font-semibold uppercase tracking-[0.2em] mb-3 text-blue">Pick your era</span>
               <h2 className="mb-4">Music By Decades</h2>
-              <p className="text-lg text-muted">Jump straight to the sound of your generation — or wander through them all.</p>
+              <p className="text-lg text-muted">Jump straight to the sound of your generation - or wander through them all.</p>
             </FadeIn>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
               {DECADES.map((d, i) => (
@@ -76,13 +76,13 @@ export function HomePage() {
           </div>
         </section>
 
-        {/* 4. Feature grid — four informational cards */}
+        {/* 4. Feature grid - four informational cards */}
         <section className="py-16 md:py-24 border-t border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn className="max-w-2xl mb-12">
               <span className="block text-[12px] font-semibold uppercase tracking-[0.2em] mb-3 text-gold">Why Decades</span>
               <h2 className="mb-4">Not A Playlist. A Radio Station.</h2>
-              <p className="text-lg text-muted">Keeping generations connected through music — the way radio was meant to feel.</p>
+              <p className="text-lg text-muted">Keeping generations connected through music - the way radio was meant to feel.</p>
             </FadeIn>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {features.map((f, i) => (

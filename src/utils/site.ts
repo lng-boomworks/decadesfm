@@ -1,5 +1,5 @@
 // Shared site data for Decades Worldwide Radio.
-// Edit these in one place — components read from here.
+// Edit these in one place - components read from here.
 
 export const STREAM_URL = "https://s6.citrus3.com/public/decadesfmworldwideradio";
 export const EMAIL = "info@decadesworldwideradio.com";
@@ -23,10 +23,10 @@ export const NAV_LINKS = [
 ];
 
 // Five decades drive the hero timeline and the category grid. Each gets one
-// neon accent from the palette. `image` is optional — cards fall back to a
+// neon accent from the palette. `image` is optional - cards fall back to a
 // tinted gradient until a real photo is dropped into public/images/decades/.
 export const DECADES = [
-  { id: "60s", label: "60s", sub: "The Swinging Sixties", blurb: "Where it all began — Motown soul and the British Invasion.", tint: "var(--color-gold)", image: "/images/decades/60s.webp" },
+  { id: "60s", label: "60s", sub: "The Swinging Sixties", blurb: "Where it all began - Motown soul and the British Invasion.", tint: "var(--color-gold)", image: "/images/decades/60s.webp" },
   { id: "70s", label: "70s", sub: "Disco Fever", blurb: "Stadium anthems and the glitterball in full swing.", tint: "var(--color-pink)", image: "/images/decades/70s.webp" },
   { id: "80s", label: "80s", sub: "Neon Nights", blurb: "Big hair, bigger choruses and synth-pop at full volume.", tint: "var(--color-blue)", image: "/images/decades/80s.webp" },
   { id: "90s", label: "90s", sub: "The Anthems", blurb: "Britpop, R&B and the last great singalong decade.", tint: "var(--color-purple)", image: "/images/decades/90s.webp" },

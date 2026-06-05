@@ -23,7 +23,7 @@ export function ContactPage() {
           <div className="max-w-2xl mx-auto px-4 text-center">
             <FadeIn>
               <span className="block text-[12px] font-semibold uppercase tracking-[0.2em] mb-4 text-magenta">Get in touch</span>
-              <h1 className="mb-6">Say hello — or request a song.</h1>
+              <h1 className="mb-6">Say hello - or request a song.</h1>
               <p className="text-xl text-muted">
                 We love hearing from listeners. Drop us a line, send us your dedications,
                 or just let us know what you want to hear next.
@@ -35,13 +35,13 @@ export function ContactPage() {
         <section className="pb-16 md:pb-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-6">
-              {/* Request a song — primary action */}
+              {/* Request a song - primary action */}
               <FadeIn>
                 <a href={requestMailto} className="group flex flex-col h-full p-8 rounded-2xl bg-amber text-night-deep transition-all duration-300 hover:-translate-y-1 shadow-[0_0_30px_-10px_var(--color-amber)]">
                   <Music2 className="w-10 h-10 mb-6" strokeWidth={1.75} />
                   <h3 className="text-2xl mb-2 text-night-deep">Request a song</h3>
                   <p className="text-night-deep/80 leading-relaxed mb-6">
-                    Got a track you're dying to hear? Send us your request and a dedication —
+                    Got a track you're dying to hear? Send us your request and a dedication -
                     we'll do our best to get it on air.
                   </p>
                   <span className="mt-auto font-semibold underline underline-offset-4">Open a request email →</span>
@@ -83,7 +83,7 @@ export function ContactPage() {
           <div className="absolute inset-0 -z-10" style={{ background: "radial-gradient(ellipse 60% 80% at 50% 120%, rgba(255,178,62,0.16), transparent 60%)" }} />
           <div className="max-w-3xl mx-auto px-4 text-center">
             <FadeIn>
-              <h2 className="mb-6">While you're here — tune in.</h2>
+              <h2 className="mb-6">While you're here - tune in.</h2>
               <p className="text-muted text-lg mb-10 max-w-xl mx-auto">The music's already playing. Press play and listen along.</p>
               <div className="flex justify-center">
                 <LivePlayer label="Listen Live" />
