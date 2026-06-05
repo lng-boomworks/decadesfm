@@ -18,7 +18,7 @@ export function ContactPage() {
     <>
       <Navbar />
       <main>
-        <section className="relative pt-32 pb-12 md:pt-40 md:pb-16 overflow-hidden">
+        <section className="relative pt-36 pb-12 md:pt-44 md:pb-16 overflow-hidden">
           <div className="absolute inset-0 -z-10" style={{ background: "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(232,70,110,0.14), transparent 60%)" }} />
           <div className="max-w-2xl mx-auto px-4 text-center">
             <FadeIn>

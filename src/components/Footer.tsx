@@ -1,7 +1,10 @@
 import { Mail } from "lucide-react";
 import { InstagramIcon, YoutubeIcon } from "./BrandIcons";
 import { withBase } from "../utils/url";
-import { NAV_LINKS, SOCIALS, EMAIL, PLATFORMS } from "../utils/site";
+import { NAV_LINKS, SOCIALS, PLATFORMS } from "../utils/site";
+
+// Footer contact uses the decadesfm.com domain.
+const FOOTER_EMAIL = "info@decadesfm.com";
 
 export function Footer() {
   const socialCls =
@@ -56,8 +59,8 @@ export function Footer() {
                 </span>
               ))}
             </div>
-            <a href={`mailto:${EMAIL}`} className="inline-flex items-center gap-2 text-[14px] text-muted hover:text-blue transition-colors">
-              <Mail className="w-4 h-4" /> {EMAIL}
+            <a href={`mailto:${FOOTER_EMAIL}`} className="inline-flex items-center gap-2 text-[14px] text-muted hover:text-blue transition-colors">
+              <Mail className="w-4 h-4" /> {FOOTER_EMAIL}
             </a>
           </div>
 

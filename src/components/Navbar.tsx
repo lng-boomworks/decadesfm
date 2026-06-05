@@ -37,22 +37,26 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 h-20 lg:h-28 transition-all duration-300 ${
         isScrolled ? "glass shadow-[0_10px_40px_-20px_rgba(0,0,0,0.9)]" : "bg-transparent border-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[76px] flex items-center justify-between gap-4">
-        {/* Logo (left) */}
-        <a href={withBase("/")} className="flex items-center shrink-0" aria-label="Decades Worldwide Radio — home">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full relative">
+        {/* Logo (left) — oversized, top-aligned so it overflows the bar */}
+        <a
+          href={withBase("/")}
+          className="absolute left-4 sm:left-6 lg:left-8 top-2 z-10"
+          aria-label="Decades Worldwide Radio — home"
+        >
           <img
             src={withBase("/images/logo.webp")}
             alt="Decades Worldwide Radio"
-            className="h-12 w-auto"
+            className="h-28 lg:h-36 w-auto drop-shadow-[0_8px_24px_rgba(0,0,0,0.6)]"
           />
         </a>
 
-        {/* Nav (centre) */}
-        <nav className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-8">
+        {/* Nav (centre, bottom-aligned) */}
+        <nav className="hidden lg:flex absolute left-1/2 -translate-x-1/2 bottom-0 pb-5 items-center gap-8">
           {NAV_LINKS.map((link) => (
             <a
               key={link.path}
@@ -66,15 +70,17 @@ export function Navbar() {
           ))}
         </nav>
 
-        {/* Social + CTA (right) */}
-        <div className="hidden lg:flex items-center gap-4 shrink-0">
-          <Socials />
-          <LivePlayer />
+        {/* Right cluster — socials bottom-aligned, Listen Live vertically centred */}
+        <div className="hidden lg:flex absolute right-4 sm:right-6 lg:right-8 inset-y-0 items-stretch gap-5">
+          <Socials className="self-end pb-5" />
+          <div className="self-center">
+            <LivePlayer />
+          </div>
         </div>
 
-        {/* Mobile toggle */}
+        {/* Mobile toggle (vertically centred) */}
         <button
-          className="lg:hidden p-2 text-foreground"
+          className="lg:hidden absolute right-4 top-1/2 -translate-y-1/2 p-2 text-foreground"
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
           aria-label="Toggle menu"
           aria-expanded={isMobileMenuOpen}
@@ -85,7 +91,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden absolute top-[76px] left-0 right-0 glass border-t-0 transition-all duration-300 overflow-hidden ${
+        className={`lg:hidden absolute top-full left-0 right-0 glass border-t-0 transition-all duration-300 overflow-hidden ${
           isMobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >

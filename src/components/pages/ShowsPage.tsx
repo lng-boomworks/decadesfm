@@ -20,7 +20,7 @@ export function ShowsPage() {
     <>
       <Navbar />
       <main>
-        <section className="pt-32 pb-12 md:pt-40 md:pb-16">
+        <section className="pt-36 pb-12 md:pt-44 md:pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn className="max-w-2xl">
               <span className="block text-[12px] font-semibold uppercase tracking-[0.2em] mb-4 text-amber">Shows &amp; Presenters</span>

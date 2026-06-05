@@ -24,7 +24,7 @@ export function HomePage() {
       <Navbar />
       <main>
         {/* 1. Hero — split layout */}
-        <section className="relative pt-32 pb-16 md:pt-40 md:pb-20 overflow-hidden">
+        <section className="relative pt-36 pb-16 md:pt-44 md:pb-20 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <FadeIn>

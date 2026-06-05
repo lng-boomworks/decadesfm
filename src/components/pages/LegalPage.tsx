@@ -17,7 +17,7 @@ export function LegalPage({ title, intro, sections }: LegalPageProps) {
     <>
       <Navbar />
       <main>
-        <section className="pt-32 pb-12 md:pt-40 md:pb-16">
+        <section className="pt-36 pb-12 md:pt-44 md:pb-16">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <h1 className="mb-6">{title}</h1>
