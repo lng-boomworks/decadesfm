@@ -30,10 +30,9 @@ export function SchedulePage() {
                   src="https://s6.citrus3.com/controller/Event/1194/upcomingWeek?start=00:00:00&end=24:00:00"
                   title="Decades Worldwide Radio weekly schedule"
                   width="100%"
-                  height="600"
-                  scrolling="no"
-                  className="block w-full rounded-xl"
-                  style={{ border: "none", overflow: "hidden", filter: "invert(0.92) hue-rotate(180deg)" }}
+                  scrolling="auto"
+                  className="block w-full rounded-xl h-[70vh] min-h-[440px] md:h-[680px]"
+                  style={{ border: "none", filter: "invert(0.92) hue-rotate(180deg)" }}
                 ></iframe>
               </div>
             </FadeIn>

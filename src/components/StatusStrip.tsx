@@ -23,7 +23,7 @@ export function StatusStrip() {
   return (
     <div className="grid gap-5 sm:grid-cols-3">
       {/* Now Playing - cover art + live track */}
-      <div className="glow-card flex items-center gap-4 p-5" style={{ ["--accent" as string]: "var(--color-blue)" }}>
+      <div className="glow-card flex items-center gap-4 p-5 min-w-0" style={{ ["--accent" as string]: "var(--color-blue)" }}>
         <div
           className="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center shrink-0"
           style={{ background: "color-mix(in srgb, var(--color-blue) 16%, transparent)", color: "var(--color-blue)" }}
@@ -44,7 +44,7 @@ export function StatusStrip() {
       </div>
 
       {/* On Air status */}
-      <div className="glow-card flex items-center gap-4 p-5" style={{ ["--accent" as string]: "var(--color-pink)" }}>
+      <div className="glow-card flex items-center gap-4 p-5 min-w-0" style={{ ["--accent" as string]: "var(--color-pink)" }}>
         <div
           className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
           style={{ background: "color-mix(in srgb, var(--color-pink) 16%, transparent)", color: "var(--color-pink)" }}
@@ -68,7 +68,7 @@ export function StatusStrip() {
       </div>
 
       {/* Listeners */}
-      <div className="glow-card flex items-center gap-4 p-5" style={{ ["--accent" as string]: "var(--color-gold)" }}>
+      <div className="glow-card flex items-center gap-4 p-5 min-w-0" style={{ ["--accent" as string]: "var(--color-gold)" }}>
         <div
           className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
           style={{ background: "color-mix(in srgb, var(--color-gold) 16%, transparent)", color: "var(--color-gold)" }}

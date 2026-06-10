@@ -12,7 +12,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand + socials + contact */}
-          <div className="col-span-2 md:col-span-1">
+          <div className="col-span-2 md:col-span-1 text-center md:text-left">
             <a href={withBase("/")} className="inline-flex items-center mb-5" aria-label="Decades Worldwide Radio - home">
               <img
                 src={withBase("/images/logo.webp")}
@@ -20,11 +20,11 @@ export function Footer() {
                 className="h-16 w-auto"
               />
             </a>
-            <p className="text-[15px] leading-relaxed mb-6 max-w-sm text-muted">
+            <p className="text-[15px] leading-relaxed mb-6 max-w-sm mx-auto md:mx-0 text-muted">
               The Soundtrack of Your Life. Five decades of the greatest hits, live 24/7 -
               keeping generations connected through music.
             </p>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center md:justify-start gap-2">
               <a href={SOCIALS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className={socialCls}><FacebookIcon /></a>
             </div>
           </div>

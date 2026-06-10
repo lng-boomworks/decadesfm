@@ -33,7 +33,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 h-32 lg:h-28 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 h-40 lg:h-28 transition-all duration-300 ${
         isScrolled ? "glass shadow-[0_10px_40px_-20px_rgba(0,0,0,0.9)]" : "bg-transparent border-transparent"
       }`}
     >
@@ -80,7 +80,7 @@ export function Navbar() {
             <img
               src={withBase("/images/logo.webp")}
               alt="Decades Worldwide Radio"
-              className="h-20 w-auto drop-shadow-[0_8px_24px_rgba(0,0,0,0.6)]"
+              className="h-28 w-auto drop-shadow-[0_8px_24px_rgba(0,0,0,0.6)]"
             />
           </a>
           <button
