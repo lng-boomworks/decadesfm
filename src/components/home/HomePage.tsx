@@ -59,6 +59,20 @@ export function HomePage() {
           </div>
         </section>
 
+        {/* Sponsor */}
+        <section className="pb-8 md:pb-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <FadeIn className="flex flex-col items-center text-center">
+              <span className="block text-[12px] font-semibold uppercase tracking-[0.2em] mb-4 text-muted">Sponsored by</span>
+              <img
+                src={withBase("/images/sponsor-june-2026.png")}
+                alt="Our sponsor"
+                className="h-auto w-full max-w-5xl max-h-72 object-contain"
+              />
+            </FadeIn>
+          </div>
+        </section>
+
         {/* 3. Category grid - five decades */}
         <section className="py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
