@@ -23,3 +23,11 @@ export function YoutubeIcon({ className = "w-5 h-5" }: IconProps) {
     </svg>
   );
 }
+
+export function FacebookIcon({ className = "w-5 h-5" }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M14 8.5V7c0-.9.6-1.1 1-1.1h2V2.6h-2.8C11 2.6 10 4.7 10 6.4v2.1H8v3.3h2V22h4v-10.2h2.6l.4-3.3H14z" />
+    </svg>
+  );
+}

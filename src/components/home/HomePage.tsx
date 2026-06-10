@@ -27,7 +27,7 @@ export function HomePage() {
         {/* 1. Hero - split layout */}
         <section className="relative pt-36 pb-16 md:pt-44 md:pb-20 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
               <FadeIn>
                 <span className="inline-flex items-center gap-2 px-3 py-1 rounded-lg glass text-xs font-semibold uppercase tracking-[0.18em] text-gold mb-6">
                   Broadcasting worldwide · 24/7
@@ -45,7 +45,7 @@ export function HomePage() {
                 </div>
               </FadeIn>
 
-              <FadeIn delay={0.15} direction="left">
+              <FadeIn delay={0.15} direction="left" className="lg:h-full">
                 <HeroTimeline />
               </FadeIn>
             </div>

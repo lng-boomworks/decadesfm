@@ -2,7 +2,6 @@ import { Navbar } from "../Navbar";
 import { Footer } from "../Footer";
 import { FadeIn } from "../FadeIn";
 import { LivePlayer } from "../LivePlayer";
-import { ScheduleGrid } from "../ScheduleGrid";
 import { Button } from "../Button";
 
 export function SchedulePage() {
@@ -26,7 +25,17 @@ export function SchedulePage() {
         <section className="pb-20 md:pb-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
-              <ScheduleGrid />
+              <div className="glow-card overflow-hidden p-2 sm:p-4" style={{ ["--accent" as string]: "var(--color-teal)" }}>
+                <iframe
+                  src="https://s6.citrus3.com/controller/Event/1194/upcomingWeek?start=00:00:00&end=24:00:00"
+                  title="Decades Worldwide Radio weekly schedule"
+                  width="100%"
+                  height="600"
+                  scrolling="no"
+                  className="block w-full rounded-xl"
+                  style={{ border: "none", overflow: "hidden", filter: "invert(0.92) hue-rotate(180deg)" }}
+                ></iframe>
+              </div>
             </FadeIn>
           </div>
         </section>

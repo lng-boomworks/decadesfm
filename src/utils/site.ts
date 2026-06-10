@@ -5,12 +5,10 @@
 export const STREAM_DIRECT_URL = "https://s6.citrus3.com:2020/11066/stream";
 // Public Citrus3 player page - fallback "open in new tab" if inline playback fails.
 export const STREAM_URL = "https://s6.citrus3.com/public/decadesfmworldwideradio";
-export const EMAIL = "info@decadesfm.com";
+export const EMAIL = "leehowardmusic@outlook.com";
 
 export const SOCIALS = {
-  instagram: "https://www.instagram.com/decadesworldwideradio",
-  youtube: "https://www.youtube.com/@decadesworldwideradio",
-  x: "https://x.com/decadesww",
+  facebook: "https://www.facebook.com/lee.howard.10/",
 };
 
 // Where the station can be heard (multi-platform distribution).

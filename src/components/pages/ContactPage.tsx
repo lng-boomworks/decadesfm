@@ -3,7 +3,7 @@ import { Footer } from "../Footer";
 import { FadeIn } from "../FadeIn";
 import { LivePlayer } from "../LivePlayer";
 import { Mail, Music2 } from "lucide-react";
-import { InstagramIcon, YoutubeIcon } from "../BrandIcons";
+import { FacebookIcon } from "../BrandIcons";
 import { EMAIL, SOCIALS } from "../../utils/site";
 
 const requestMailto =
@@ -63,14 +63,8 @@ export function ContactPage() {
                 <div className="glow-card p-6" style={{ ["--accent" as string]: "var(--color-purple)" }}>
                   <div className="text-sm text-muted mb-4">Follow the station</div>
                   <div className="flex items-center gap-3">
-                    <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-night border border-night-line text-cream hover:text-amber hover:border-amber transition-colors">
-                      <InstagramIcon /> <span className="text-sm font-medium">Instagram</span>
-                    </a>
-                    <a href={SOCIALS.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-night border border-night-line text-cream hover:text-amber hover:border-amber transition-colors">
-                      <YoutubeIcon /> <span className="text-sm font-medium">YouTube</span>
-                    </a>
-                    <a href={SOCIALS.x} target="_blank" rel="noopener noreferrer" aria-label="X" className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-night border border-night-line text-cream hover:text-amber hover:border-amber transition-colors">
-                      <span className="font-display font-bold text-lg leading-none">𝕏</span> <span className="text-sm font-medium">X</span>
+                    <a href={SOCIALS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-night border border-night-line text-cream hover:text-amber hover:border-amber transition-colors">
+                      <FacebookIcon /> <span className="text-sm font-medium">Facebook</span>
                     </a>
                   </div>
                 </div>

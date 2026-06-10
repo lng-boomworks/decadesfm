@@ -1,5 +1,5 @@
 import { Mail } from "lucide-react";
-import { InstagramIcon, YoutubeIcon } from "./BrandIcons";
+import { FacebookIcon } from "./BrandIcons";
 import { withBase } from "../utils/url";
 import { NAV_LINKS, SOCIALS, EMAIL, PLATFORMS } from "../utils/site";
 
@@ -25,11 +25,7 @@ export function Footer() {
               keeping generations connected through music.
             </p>
             <div className="flex items-center gap-2">
-              <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={socialCls}><InstagramIcon /></a>
-              <a href={SOCIALS.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className={socialCls}><YoutubeIcon /></a>
-              <a href={SOCIALS.x} target="_blank" rel="noopener noreferrer" aria-label="X" className={socialCls}>
-                <span className="font-display text-lg leading-none w-5 h-5 flex items-center justify-center">𝕏</span>
-              </a>
+              <a href={SOCIALS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className={socialCls}><FacebookIcon /></a>
             </div>
           </div>
 

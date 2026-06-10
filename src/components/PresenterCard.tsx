@@ -3,17 +3,16 @@ import { withBase } from "../utils/url";
 
 interface PresenterCardProps {
   name: string;
-  show: string;
-  slot: string;
   bio: string;
   image?: string;
 }
 
 /**
- * Presenter profile card for the /shows team grid. `image` is optional - until
- * real presenter photos exist, the card shows a branded monogram placeholder.
+ * Presenter profile card for the /shows team grid - photo, name and a short bio.
+ * `image` is optional - until a real photo exists, the card shows a branded
+ * monogram placeholder.
  */
-export function PresenterCard({ name, show, slot, bio, image }: PresenterCardProps) {
+export function PresenterCard({ name, bio, image }: PresenterCardProps) {
   const initials = name
     .split(" ")
     .map((w) => w[0])
@@ -33,9 +32,7 @@ export function PresenterCard({ name, show, slot, bio, image }: PresenterCardPro
         )}
       </div>
       <div className="p-6">
-        <p className="text-[11px] uppercase tracking-widest text-blue mb-1">{slot}</p>
-        <h3 className="text-2xl tracking-wide text-foreground mb-1">{name}</h3>
-        <p className="text-gold font-medium text-[15px] mb-3">{show}</p>
+        <h3 className="text-2xl tracking-wide text-foreground mb-3">{name}</h3>
         <p className="text-muted text-[15px] leading-relaxed">{bio}</p>
       </div>
     </div>

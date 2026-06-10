@@ -4,6 +4,7 @@ import { FadeIn } from "../FadeIn";
 import { LivePlayer } from "../LivePlayer";
 import { Users, Mic2, Radio } from "lucide-react";
 import { PLATFORMS } from "../../utils/site";
+import { withBase } from "../../utils/url";
 
 const values = [
   { icon: Users, title: "Every generation", desc: "From the 60s to today, there's a place on the dial for everyone. We bring the family together around the music they grew up with - and the music they're discovering now.", tint: "var(--color-gold)" },
@@ -49,6 +50,13 @@ export function AboutPage() {
                   {/* {{ABOUT_STORY_EXTRA - optional: founding story, where the station broadcasts from, the team's history.}} */}
                 </p>
               </div>
+            </FadeIn>
+            <FadeIn>
+              <img
+                src={withBase("/images/about.jpeg")}
+                alt="Decades Worldwide Radio"
+                className="mt-12 mx-auto w-full rounded-2xl"
+              />
             </FadeIn>
           </div>
         </section>

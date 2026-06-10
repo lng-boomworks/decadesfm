@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { LivePlayer } from "./LivePlayer";
-import { InstagramIcon, YoutubeIcon } from "./BrandIcons";
+import { FacebookIcon } from "./BrandIcons";
 import { withBase } from "../utils/url";
 import { NAV_LINKS, SOCIALS } from "../utils/site";
 
@@ -12,11 +12,7 @@ function Socials({ className = "" }: { className?: string }) {
     "p-2 rounded-lg text-muted hover:text-blue hover:bg-white/5 transition-colors";
   return (
     <div className={`flex items-center gap-1 ${className}`}>
-      <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className={cls}><InstagramIcon /></a>
-      <a href={SOCIALS.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className={cls}><YoutubeIcon /></a>
-      <a href={SOCIALS.x} target="_blank" rel="noopener noreferrer" aria-label="X" className={cls}>
-        <span className="font-display text-lg leading-none w-5 h-5 flex items-center justify-center">𝕏</span>
-      </a>
+      <a href={SOCIALS.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className={cls}><FacebookIcon /></a>
     </div>
   );
 }
@@ -37,21 +33,21 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 h-20 lg:h-28 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 h-32 lg:h-28 transition-all duration-300 ${
         isScrolled ? "glass shadow-[0_10px_40px_-20px_rgba(0,0,0,0.9)]" : "bg-transparent border-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full relative">
-        {/* Logo (left) - oversized, top-aligned so it overflows the bar */}
+        {/* Logo (left, desktop) - oversized, top-aligned so it overflows the bar */}
         <a
           href={withBase("/")}
-          className="absolute left-4 sm:left-6 lg:left-8 top-2 z-10"
+          className="hidden lg:block absolute lg:left-8 top-2 z-10"
           aria-label="Decades Worldwide Radio - home"
         >
           <img
             src={withBase("/images/logo.webp")}
             alt="Decades Worldwide Radio"
-            className="h-28 lg:h-36 w-auto drop-shadow-[0_8px_24px_rgba(0,0,0,0.6)]"
+            className="h-36 w-auto drop-shadow-[0_8px_24px_rgba(0,0,0,0.6)]"
           />
         </a>
 
@@ -78,15 +74,24 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile toggle (vertically centred) */}
-        <button
-          className="lg:hidden absolute right-4 top-1/2 -translate-y-1/2 p-2 text-foreground"
-          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-          aria-label="Toggle menu"
-          aria-expanded={isMobileMenuOpen}
-        >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Mobile header - centred logo with the hamburger toggle below it */}
+        <div className="lg:hidden flex flex-col items-center pt-1">
+          <a href={withBase("/")} aria-label="Decades Worldwide Radio - home">
+            <img
+              src={withBase("/images/logo.webp")}
+              alt="Decades Worldwide Radio"
+              className="h-20 w-auto drop-shadow-[0_8px_24px_rgba(0,0,0,0.6)]"
+            />
+          </a>
+          <button
+            className="-mt-1 p-2 text-foreground"
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}

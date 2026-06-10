@@ -4,15 +4,16 @@ import { FadeIn } from "../FadeIn";
 import { LivePlayer } from "../LivePlayer";
 import { PresenterCard } from "../PresenterCard";
 
-// v1 placeholder presenters. Swap names / shows / slots / bios / photos when the
-// client supplies real presenter details. `image` paths live in public/images/.
+// Presenters - photo, name and a short bio. Add/remove entries freely.
+// `image` paths live in public/images/presenters/. Fill each `bio:` below.
+// A presenter with no photo yet shows a branded monogram placeholder.
 const presenters = [
-  { name: "{{PRESENTER_1_NAME}}", show: "Morning Glory", slot: "Weekdays · 06:00–10:00", bio: "{{PRESENTER_1_BIO - a line on who they are and what they bring to the morning show.}}" },
-  { name: "{{PRESENTER_2_NAME}}", show: "Mid-Morning Mix", slot: "Weekdays · 10:00–13:00", bio: "{{PRESENTER_2_BIO}}" },
-  { name: "{{PRESENTER_3_NAME}}", show: "Lunchtime Classics", slot: "Weekdays · 13:00–16:00", bio: "{{PRESENTER_3_BIO}}" },
-  { name: "{{PRESENTER_4_NAME}}", show: "Drive Time Decades", slot: "Weekdays · 16:00–19:00", bio: "{{PRESENTER_4_BIO}}" },
-  { name: "{{PRESENTER_5_NAME}}", show: "Evening Sessions", slot: "Weekdays · 19:00–22:00", bio: "{{PRESENTER_5_BIO}}" },
-  { name: "{{PRESENTER_6_NAME}}", show: "After Dark", slot: "Nightly · 22:00–06:00", bio: "{{PRESENTER_6_BIO}}" },
+  { name: "Chris Kelly", image: "/images/presenters/chris-kelly.png", bio: "Chris started his DJ career in Bradford, West Yorkshire in 1975, launching his own company, The Disco Roadshow, by the age of 20. That grew into a lifelong full-time DJ career that's still going strong today, alongside True Media Group - the team behind the hugely successful True Radio. Now a formidable presence on Decades FM, Chris brings the full party experience to the airwaves, spinning the very best music from the sixties right through to the present day." },
+  { name: "Dave Cooper", image: "/images/presenters/dave-cooper.png", bio: "Dave brings a vibrant mix of nostalgia and musical joy to the airwaves with his Hits from the Sixties to the Nineties show. From rock 'n' roll to eighties anthems and nineties favourites, he celebrates four decades of unforgettable music with warmth, enthusiasm and a brilliant sense of fun. Dave's show is a feelgood journey through the songs that shaped generations - the perfect soundtrack for anyone who loves a classic track with a great story behind it." },
+  { name: "Jim Stevens", image: "/images/presenters/jim-stevens.png", bio: "Jim's radio career stretches back to the nineties, when he presented the weekday morning show on Eclipse FM - a station whose directors included the legendary Dave Cash - followed more recently by weekday afternoons on a commercial station in East Sussex. Along the way he's interviewed everyone from Bo Diddley (who insisted on being called \"Mr Diddley\") to comedian Richard Digance. Today Jim brings all that experience and good humour to his Happy Hour show on Decades Worldwide Radio." },
+  { name: "John Holman", image: "/images/presenters/john-holman.png", bio: "John's roots run deep in the golden era of British songwriting, having worked as a researcher for legendary names including Tony Hiller, Roger Cook, Barry Mason, Roger Greenaway and The Fortunes. He channels that encyclopaedic knowledge into his Blasts from the Past: Non-Hit Wonders show - unearthing the brilliant records that somehow slipped through the net, and giving them the airtime they always deserved." },
+  { name: "Ian Lee", image: "/images/presenters/ian-lee.png", bio: "{{IAN_LEE_BIO}}" },
+  { name: "Lee Howard", image: "/images/presenters/lee-howard.png", bio: "Lee has spent most of his life in the music business - as a guitarist and vocalist on a wealth of well-known records by famous artists, with three singles of his own, and as an executive at Decca and Chrysalis Records. He brings that insider knowledge and deep musical pedigree to prime-time radio, presenting shows that span everything from the sixties to the present day, with a loyal following all over the globe." },
 ];
 
 export function ShowsPage() {
