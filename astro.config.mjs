@@ -5,8 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://lng-boomworks.github.io',
-  base: '/decadesfm',
+  site: 'https://decadesworldwide.com',
+  base: '/',
   integrations: [react(), sitemap()],
   output: 'static',
   vite: {
