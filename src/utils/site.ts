@@ -8,7 +8,7 @@ export const STREAM_URL = "https://s6.citrus3.com/public/decadesfmworldwideradio
 export const EMAIL = "leehowardmusic@outlook.com";
 
 export const SOCIALS = {
-  facebook: "https://www.facebook.com/lee.howard.10/",
+  facebook: "https://www.facebook.com/profile.php?id=61588675230153",
 };
 
 // Where the station can be heard (multi-platform distribution).

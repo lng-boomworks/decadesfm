@@ -64,11 +64,18 @@ export function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn className="flex flex-col items-center text-center">
               <span className="block text-[12px] font-semibold uppercase tracking-[0.2em] mb-4 text-muted">Sponsored by</span>
-              <img
-                src={withBase("/images/sponsor-june-2026.png")}
-                alt="Our sponsor"
-                className="h-auto w-full max-w-5xl max-h-72 object-contain"
-              />
+              <a
+                href="https://www.facebook.com/profile.php?id=61587073853388"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit our sponsor"
+              >
+                <img
+                  src={withBase("/images/sponsor-june-2026.png")}
+                  alt="Our sponsor"
+                  className="h-auto w-full max-w-5xl max-h-72 object-contain"
+                />
+              </a>
             </FadeIn>
           </div>
         </section>
