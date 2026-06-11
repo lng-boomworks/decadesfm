@@ -33,7 +33,7 @@ export function HomePage() {
                   Broadcasting worldwide · 24/7
                 </span>
                 <h1 className="mb-6">
-                  The Soundtrack<br />of Your Life
+                  The Soundtrack<br />of Your Life Starts Here
                 </h1>
                 <p className="text-xl text-muted mb-9 max-w-xl">
                   Five decades of the greatest hits - 60s, 70s, 80s, 90s to today - live and
