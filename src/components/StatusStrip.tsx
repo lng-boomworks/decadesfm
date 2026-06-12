@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Disc3, Radio, Users } from "lucide-react";
+import { Disc3, Radio } from "lucide-react";
 import { withBase } from "../utils/url";
 
 /**
@@ -21,7 +21,7 @@ export function StatusStrip() {
   }, []);
 
   return (
-    <div className="grid gap-5 sm:grid-cols-3">
+    <div className="grid gap-5 sm:grid-cols-2">
       {/* Now Playing - cover art + live track */}
       <div className="glow-card flex items-center gap-4 p-5 min-w-0" style={{ ["--accent" as string]: "var(--color-blue)" }}>
         <div
@@ -67,24 +67,9 @@ export function StatusStrip() {
         </div>
       </div>
 
-      {/* Listeners */}
-      <div className="glow-card flex items-center gap-4 p-5 min-w-0" style={{ ["--accent" as string]: "var(--color-gold)" }}>
-        <div
-          className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
-          style={{ background: "color-mix(in srgb, var(--color-gold) 16%, transparent)", color: "var(--color-gold)" }}
-        >
-          <Users className="w-6 h-6" strokeWidth={1.75} />
-        </div>
-        <div className="min-w-0">
-          <p className="text-[11px] uppercase tracking-[0.18em] text-muted">Listeners</p>
-          <p className="font-display text-lg tracking-wide text-foreground truncate">
-            <span data-widget="mcp-custom-text" data-name={STATION} data-format="%connections%"></span>
-          </p>
-          <a href={withBase("/schedule")} className="text-xs font-semibold mt-1 inline-block hover:underline" style={{ color: "var(--color-gold)" }}>
-            Full schedule →
-          </a>
-        </div>
-      </div>
+      {/* Listeners - hidden for now; reinstate once listener numbers grow
+          (a "0" reads as negative on a new station). Restore the sm:grid-cols-3
+          on the wrapper above when bringing this back. */}
     </div>
   );
 }
